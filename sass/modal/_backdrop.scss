@@ -8,9 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition-property: visibility, opacity;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: visibility $transition, opacity $transition;
 }
 
 .is-hidden {
@@ -61,11 +59,6 @@
     bottom: 11px;
 }
 
-.modal-label__input:focus,
-.modal-label__input:hover {
-    border-color: $logo-leading-color;
-}
-
 .modal-label__input:hover+.modal-label__input-icons,
 .modal-label__input:focus+.modal-label__input-icons {
     fill: $logo-leading-color;
@@ -78,6 +71,11 @@
     padding-left: 42px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+
+    &:focus,
+    &:hover {
+        border-color: $logo-leading-color;
+    }
 }
 
 .modal-label__comment {
@@ -87,11 +85,13 @@
     padding: 12px 16px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
+
+    &:hover {
+        border-color: $logo-leading-color;
+    }
 }
 
-.modal-label__comment:hover {
-    border-color: $logo-leading-color;
-}
+
 
 .check-box {
     display: flex;
@@ -165,11 +165,11 @@
     border-radius: 4px;
     padding: 10px 52px;
     border: none;
-}
 
-.send-btn:hover,
-.send-btn:focus {
-    cursor: pointer;
+    &:hover,
+    &:focus {
+        cursor: pointer;
+    }
 }
 
 .close-btn {
@@ -184,12 +184,12 @@
     justify-content: center;
     background-color: $main-back-color;
     border-color: rgba(0, 0, 0, 0.1);
-}
 
-.close-btn:hover,
-.close-btn:focus,
-.close-btn:hover path,
-.close-btn:focus path {
-    cursor: pointer;
-    fill: #2196F3;
+    &:hover,
+    &:focus,
+    &:hover path,
+    &:focus path {
+        cursor: pointer;
+        fill: $logo-leading-color;
+    }
 }

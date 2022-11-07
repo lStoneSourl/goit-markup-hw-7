@@ -32,20 +32,22 @@
     letter-spacing: 0.03em;
     color: $header-link-color;
     cursor: pointer;
-    transition-property: background-color, color, box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color $transition,
+    color $transition,
+    box-shadow $transition;
+
+    &:hover,
+    &:focus {
+        background-color: $logo-leading-color;
+        color: $main-back-color;
+        box-shadow:
+            0px 3px 1px rgba(0, 0, 0, 0.1),
+            0px 1px 2px rgba(0, 0, 0, 0.08),
+            0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
 }
 
-.portfolio-filter__button:hover,
-.portfolio-filter__button:focus {
-    background-color: $logo-leading-color;
-    color: $main-back-color;
-    box-shadow:
-        0px 3px 1px rgba(0, 0, 0, 0.1),
-        0px 1px 2px rgba(0, 0, 0, 0.08),
-        0px 2px 2px rgba(0, 0, 0, 0.12);
-}
+
 
 .portfolio-card {
     list-style-type: none;
@@ -59,26 +61,26 @@
     display: block;
     text-decoration: none;
     background: $main-back-color;
-    transition-property: box-shadow, color, background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow $transition,
+    color $transition,
+    background-color $transition;
+
+    &:hover,
+    &:focus {
+        box-shadow:
+            0px 1px 1px rgba(0, 0, 0, 0.12),
+            0px 4px 4px rgba(0, 0, 0, 0.06),
+            1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+
+    &:hover .portfolio-visual__text {
+        transform: translateY(-100%);
+    }
 }
 
 .portfolio-visual {
     position: relative;
     overflow: hidden;
-}
-
-.portfolio-link:hover,
-.portfolio-link:focus {
-    box-shadow:
-        0px 1px 1px rgba(0, 0, 0, 0.12),
-        0px 4px 4px rgba(0, 0, 0, 0.06),
-        1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.portfolio-link:hover .portfolio-visual__text {
-    transform: translateY(-100%);
 }
 
 .portfolio-visual__text {
@@ -92,9 +94,7 @@
     text-align: start;
     padding: 64px 32px;
     background-color: rgba(33, 150, 243, 0.9);
-    transition-property: transform;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform $transition;
 }
 
 .portfolio-description {
